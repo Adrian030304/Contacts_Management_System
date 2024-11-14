@@ -49,7 +49,7 @@ print()
 
 with open("contacts.json","r") as json_file:
     people = json.load(json_file)["contacts"]
-    print(people.__class__.__name__)
+    
 while True:
     print(f"Contact list size: {len(people)}")
     command = input("You can 'Add', 'Delete', or 'Search' and 'Q' for quit: ")
@@ -69,3 +69,4 @@ while True:
 
 with open("contacts.json","w") as json_file:
     people = json.dump({"contacts": people}, json_file)
+        

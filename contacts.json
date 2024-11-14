@@ -1,1 +1,9 @@
-{"contacts": [{"name": "York", "age": "24", "email": "bjonr@gm.com"}]}
+{
+    "contacts": [
+        {
+            "name": "York",
+            "age": "24",
+            "email": "bjonr@gm.com"
+        }
+    ]
+}
