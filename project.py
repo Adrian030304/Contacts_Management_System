@@ -1,6 +1,6 @@
 import json
 
-def add_person():
+def add_person() -> dict[str:str] :
     name = input("Name: ")
     age = input("Age: ")
     email = input("Email: ")
@@ -12,11 +12,11 @@ def add_person():
     }
     return person
 
-def display_people(people):
+def display_people(people: list[str]):
     for i, person in enumerate(people):
         print(i + 1, "-", person["name"], "|", person["age"], "|", person["email"])
 
-def delete_contact(people):
+def delete_contact(people: list[str]):
     display_people(people)
     
     while True:    
@@ -32,7 +32,7 @@ def delete_contact(people):
     people.pop(number - 1)
     print("Person deleted.")
     
-def search(people):
+def search(people: list[str]):
     search_name = input("Who are you looking for? ").lower()
     results = []
     
@@ -49,7 +49,7 @@ print()
 
 with open("contacts.json","r") as json_file:
     people = json.load(json_file)["contacts"]
-
+    print(people.__class__.__name__)
 while True:
     print(f"Contact list size: {len(people)}")
     command = input("You can 'Add', 'Delete', or 'Search' and 'Q' for quit: ")
@@ -68,4 +68,4 @@ while True:
     
 
 with open("contacts.json","w") as json_file:
-    people = json.dump(json_file, {"contacts": people})
+    people = json.dump({"contacts": people}, json_file)
