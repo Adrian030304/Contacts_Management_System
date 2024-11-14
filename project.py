@@ -1,3 +1,4 @@
+import json
 
 def add_person():
     name = input("Name: ")
@@ -45,7 +46,9 @@ def search(people):
 
 print("Welcome to the contact management system")
 print()
-people = []
+
+with open("contacts.json","w+") as json_file:
+    people = json.load(json_file)["contacts"]
 
 while True:
     print(f"Contact list size: {len(people)}")
