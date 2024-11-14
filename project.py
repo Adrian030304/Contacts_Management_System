@@ -11,18 +11,22 @@ def add_person():
     }
     return person
 
-people = []
-
 print("Welcome to the contact management system")
 print()
 command = input("You can 'Add', 'Delete', or 'Search': ")
-
-if command == "add":
-    person = add_person()
-    people.append(person)
-elif command == "delete":
-    pass
-elif command == "search":
-    pass
-else:
-    print("Invalid command")    
+people = []
+while True:
+    if command == "add":
+        person = add_person()
+        people.append(person)
+        print("Person has been added. ")
+    elif command == "delete":
+        pass
+    elif command == "search":
+        pass
+    elif command == "q":
+        break
+    else:
+        print("Invalid command")    
+    
+print(people)
