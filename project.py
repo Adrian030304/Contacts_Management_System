@@ -1,16 +1,16 @@
 
-names = []
-ages = []
-emails = []
+people = []
+
+
 
 for i in range(3):
     name = input("Name: ")
     age = input("Age: ")
     email = input("Email: ")
 
-    names.append(name)
-    ages.append(age)
-    email.append(email)
-
-
-
+    person = {
+        "name":name,
+        "age":age,
+        "email":email
+    }
+    people.append(person)
