@@ -47,7 +47,7 @@ def search(people):
 print("Welcome to the contact management system")
 print()
 
-with open("contacts.json","w+") as json_file:
+with open("contacts.json","r") as json_file:
     people = json.load(json_file)["contacts"]
 
 while True:
@@ -66,4 +66,6 @@ while True:
     else:
         print("Invalid command")    
     
-print(people)
+
+with open("contacts.json","w") as json_file:
+    people = json.dump(json_file, {"contacts": people})
