@@ -17,14 +17,15 @@ def delete_contact(people):
     while True:    
         number_to_delete = input("Enter a number to delete: ")
         try:
-            number = int(number)
+            number = int(number_to_delete)
             if number <= 0 or number > len(people):
                 print("Invalid number. Out of range")
             else:
                 break 
         except:
             print("Invalid number")
-            
+    people.pop(number - 1)
+    print("Person deleted.")
 print("Welcome to the contact management system")
 print()
 people = []
