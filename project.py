@@ -14,12 +14,17 @@ def add_person():
 def delete_contact(people):
     for i, person in enumerate(people):
         print(i + 1, "-", person["name"], "|", person["age"], "|", person["email"])
-        
-    number_to_delete = input("Enter a number to delete: ")
-    try:
-        number = int(number)
-    except:
-        print("Invalid number")
+    while True:    
+        number_to_delete = input("Enter a number to delete: ")
+        try:
+            number = int(number)
+            if number <= 0 or number > len(people):
+                print("Invalid number. Out of range")
+            else:
+                break 
+        except:
+            print("Invalid number")
+            
 print("Welcome to the contact management system")
 print()
 people = []
