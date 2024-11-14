@@ -26,11 +26,16 @@ def delete_contact(people):
             print("Invalid number")
     people.pop(number - 1)
     print("Person deleted.")
+    
+def search(people):
+    
+
 print("Welcome to the contact management system")
 print()
 people = []
 
 while True:
+    print(f"Contact list size: {len(people)}")
     command = input("You can 'Add', 'Delete', or 'Search' and 'Q' for quit: ")
     if command == "add":
         person = add_person()
